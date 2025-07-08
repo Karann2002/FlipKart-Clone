@@ -17,8 +17,7 @@ useEffect(() => {
 
 
 const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("role"); // Remove role if stored
+    localStorage.clear(); // Remove role if stored
     setIsLoggedIn(false);
     navigate("/"); // Redirect to login page
   };

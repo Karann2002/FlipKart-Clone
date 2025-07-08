@@ -48,8 +48,8 @@ const AuthPage = () => {
 
           // Save to localStorage
           localStorage.setItem("token", token);
-          localStorage.setItem("uid", user.uid);
-          localStorage.setItem("email", user.email);
+          // localStorage.setItem("uid", user.uid);
+          // localStorage.setItem("email", user.email);
           localStorage.setItem("role", userRole);
 
           toast.success("Login Success");
@@ -83,10 +83,10 @@ const AuthPage = () => {
       const roleData = (await getDoc(doc(db, "users", user.uid))).data().role;
 
       localStorage.setItem("token", token);
-      localStorage.setItem("uid", user.uid);
-      localStorage.setItem("email", user.email);
-      localStorage.setItem("name", user.displayName);
-      localStorage.setItem("photo", user.photoURL || "");
+      // localStorage.setItem("uid", user.uid);
+      // localStorage.setItem("email", user.email);
+      // localStorage.setItem("name", user.displayName);
+      // localStorage.setItem("photo", user.photoURL || "");
       localStorage.setItem("role", roleData);
 
       toast.success("Google Login Success");
@@ -136,7 +136,7 @@ const AuthPage = () => {
 
       const token = await user.getIdToken();
       localStorage.setItem("token", token);
-      localStorage.setItem("uid", user.uid);
+      // localStorage.setItem("uid", user.uid);
       localStorage.setItem("role", userRole);
 
       toast.success("Phone Login Success");

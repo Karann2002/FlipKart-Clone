@@ -48,7 +48,7 @@ const Banner = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="relative w-full mx-auto overflow-hidden shadow-md h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px]"
+      className="relative w-full z-25 mx-auto overflow-visible shadow-md h-[200px] sm:h-[300px] md:h-[400px] lg:h-[300px]"
     >
       {images.map((img, index) => (
         <motion.div

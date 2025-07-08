@@ -28,10 +28,7 @@ const navigate = useNavigate();
      setIsLoggedIn(!!token) || setIsLoggedIn(!!token2)
    }, []);
  const handleLogout = () => {
-     localStorage.removeItem("token");
-     localStorage.removeItem("_grecaptcha")
- 
-    localStorage.removeItem("role"); // Remove role if stored
+     localStorage.clear();
     setIsLoggedIn(false);
     navigate("/auth/login"); // Redirect to login page
   };

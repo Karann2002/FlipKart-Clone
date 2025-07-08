@@ -6,7 +6,6 @@ import { useNavigate, Link } from "react-router-dom";
 // import { collection, getDocs,query } from "firebase/firestore";
 // import { db } from "../../../firebase-config";
 
-
 const Electronics = [
   {
     id: 1,
@@ -300,13 +299,13 @@ const DashBoard = () => {
   const navigate = useNavigate();
 
   return (
-    <div className=" bg-slate-100 gap-2 mw-9xl mx-auto top-20">
+    <div className=" bg-slate-100 gap-2 mw-9xl mx-auto top-20 justify-center items-center ">
      <div
-  className="bg-white mb-5 pt-5 relative z-25"
+  className="bg-white mb-5 p-5 relative z-40"
   style={{ overflowX: "auto", overflowY: "hidden", whiteSpace: "nowrap", WebkitOverflowScrolling: "touch" }}
 >
   <ul
-    className="flex flex-nowrap md:flex-wrap justify-start md:justify-center items-start gap-6 md:gap-9 px-4"
+    className="flex flex-nowrap md:flex-wrap justify-center items-center md:justify-center  gap-6 md:gap-9 px-4"
     style={{ minWidth: "max-content" }}
   >
     {/* Example static item */}
@@ -316,7 +315,7 @@ const DashBoard = () => {
     </li>
 
     <li className="flex flex-col justify-center items-center font-semibold min-w-[80px]">
-      <img src="./../../../public/22fddf3c7da4c4f4.webp" alt="Mobiles" className="h-17 w-17 object-cover" />
+      <img src="22fddf3c7da4c4f4.webp" alt="Mobiles" className="h-17 w-17 object-cover" />
       <span className="text-sm mt-1">Mobiles</span>
     </li>
 
@@ -324,7 +323,7 @@ const DashBoard = () => {
    <li className="flex flex-col justify-center items-center font-semibold relative group min-w-[100px] z-50">
   <div className="relative">
     <img
-      src="./../../../public/Screenshot 2025-04-17 144437.png"
+      src="Screenshot 2025-04-17 144437.png"
       alt="Electronics"
       className="h-12 w-12 object-contain"
     />
@@ -508,8 +507,9 @@ const DashBoard = () => {
 </div>
 
 
-      <div className="flex justify-center items-center mb-5">
+      <div className="flex justify-center items-center mb-5 z-25">
         <Banner />
+       
       </div>
  <div className="w-auto mb-5 overflow-visible">
   {[
