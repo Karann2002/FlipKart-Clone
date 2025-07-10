@@ -11,7 +11,6 @@ const Navbar = ({toggleSidebar}) => {
 
 useEffect(() => {
     const token = localStorage.getItem("token");
-    const userRole = localStorage.getItem("role");
     setIsLoggedIn(!!token);
   }, []);
 

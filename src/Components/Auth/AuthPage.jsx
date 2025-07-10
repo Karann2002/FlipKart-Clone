@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TbPhone } from "react-icons/tb";
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -27,7 +29,11 @@ const AuthPage = () => {
   const handleEmailAuth = async () => {
     try {
       if (isSignUp) {
-        const result = await createUserWithEmailAndPassword(auth, email, password);
+        const result = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
         const user = result.user;
 
         // Save user with role to Firestore
@@ -72,7 +78,6 @@ const AuthPage = () => {
       const userDoc = await getDoc(doc(db, "users", user.uid));
 
       if (!userDoc.exists()) {
-        // First-time login, create user record
         await setDoc(doc(db, "users", user.uid), {
           email: user.email,
           name: user.displayName,
@@ -83,10 +88,7 @@ const AuthPage = () => {
       const roleData = (await getDoc(doc(db, "users", user.uid))).data().role;
 
       localStorage.setItem("token", token);
-      // localStorage.setItem("uid", user.uid);
-      // localStorage.setItem("email", user.email);
-      // localStorage.setItem("name", user.displayName);
-      // localStorage.setItem("photo", user.photoURL || "");
+      
       localStorage.setItem("role", roleData);
 
       toast.success("Google Login Success");
@@ -99,11 +101,15 @@ const AuthPage = () => {
 
   const setUpRecaptcha = () => {
     if (!window.recaptchaVerifier) {
-      window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha-container", {
-        size: "invisible",
-        callback: () => {},
-        "expired-callback": () => {},
-      });
+      window.recaptchaVerifier = new RecaptchaVerifier(
+        auth,
+        "recaptcha-container",
+        {
+          size: "invisible",
+          callback: () => {},
+          "expired-callback": () => {},
+        }
+      );
     }
   };
 
@@ -111,7 +117,11 @@ const AuthPage = () => {
     try {
       setUpRecaptcha();
       const appVerifier = window.recaptchaVerifier;
-      const confirmation = await signInWithPhoneNumber(auth, phone, appVerifier);
+      const confirmation = await signInWithPhoneNumber(
+        auth,
+        phone,
+        appVerifier
+      );
       setConfirmResult(confirmation);
       toast.success("OTP Sent");
     } catch (err) {
@@ -136,7 +146,6 @@ const AuthPage = () => {
 
       const token = await user.getIdToken();
       localStorage.setItem("token", token);
-      // localStorage.setItem("uid", user.uid);
       localStorage.setItem("role", userRole);
 
       toast.success("Phone Login Success");
@@ -154,11 +163,21 @@ const AuthPage = () => {
         </h2>
 
         <div className="flex gap-2 justify-center">
-          <button onClick={handleGoogleLogin} className="flex items-center gap-1 border px-4 py-2 rounded-md hover:shadow">
-            <img src="/logo/icons8-google-48.png" alt="Google" className="h-5 w-5" />
+          <button
+            onClick={handleGoogleLogin}
+            className="flex items-center gap-1 border px-4 py-2 rounded-md hover:shadow"
+          >
+            <img
+              src="/logo/icons8-google-48.png"
+              alt="Google"
+              className="h-5 w-5"
+            />
             <span className="text-sm">Sign in with Google</span>
           </button>
-          <button onClick={() => setShowPhoneLogin(true)} className="flex items-center gap-1 border px-4 py-2 rounded-md hover:shadow">
+          <button
+            onClick={() => setShowPhoneLogin(true)}
+            className="flex items-center gap-1 border px-4 py-2 rounded-md hover:shadow"
+          >
             <TbPhone className="h-5 w-5" />
             <span className="text-sm">Sign in with Phone</span>
           </button>
@@ -172,61 +191,84 @@ const AuthPage = () => {
 
         {showPhoneLogin ? (
           <>
-            <input
-              type="tel"
-              placeholder="+91XXXXXXXXXX"
-              className="w-full px-4 py-2 border rounded-md"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-            />
-            <button className="w-full bg-green-600 text-white py-2 rounded-md" onClick={handlePhoneLogin}>
-              Send OTP
-            </button>
+            <form action={handlePhoneLogin} className="">
+              <PhoneInput
+              className="gap-5"
+  country={'in'}
+  value={phone}
+  onChange={(phone) => setPhone("+" + phone)}
+  inputStyle={{
+    width: "100%",
+    
+    borderRadius: "6px",
+    border: "1px solid #ccc",
+    margin:"5px"
+  }}
+  inputProps={{
+    name: 'phone',
+    required: true,
+    autoFocus: true
+  }}
+/>
 
+              <button className="w-full bg-green-600 text-white py-2 rounded-md mt-3  ">
+                Send OTP
+              </button>
+            </form>
             {confirmResult && (
               <>
-                <input
-                  type="text"
-                  placeholder="Enter OTP"
-                  className="w-full px-4 py-2 border rounded-md"
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
-                />
-                <button className="w-full bg-purple-600 text-white py-2 rounded-md" onClick={verifyOtp}>
-                  Verify OTP
-                </button>
+                <form action={verifyOtp}>
+                  <input
+                    type="password"
+                    placeholder="Enter OTP"
+                    className="w-full px-4 py-2 border rounded-md"
+                    value={otp}
+                    onChange={(e) => setOtp(e.target.value)}
+                  />
+                  <button className="w-full bg-purple-600 text-white py-2 rounded-md mt-3">
+                    Verify OTP
+                  </button>
+                </form>
               </>
             )}
             <div id="recaptcha-container"></div>
             <p className="text-center text-sm mt-2">
               Want to login with Email?{" "}
-              <button onClick={() => setShowPhoneLogin(false)} className="text-blue-600 hover:underline">
+              <button
+                onClick={() => setShowPhoneLogin(false)}
+                className="text-blue-600 hover:underline"
+              >
                 Use Email instead
               </button>
             </p>
           </>
         ) : (
           <>
-            <input
-              type="email"
-              placeholder="Email address"
-              className="w-full px-4 py-2 border rounded-md"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              className="w-full px-4 py-2 border rounded-md"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button className="w-full bg-blue-600 text-white py-2 rounded-md" onClick={handleEmailAuth}>
-              {isSignUp ? "Sign Up with Email" : "Login with Email"}
-            </button>
+            <form action={handleEmailAuth}>
+              <input
+                type="email"
+                placeholder="Email address"
+                className="w-full px-4 py-2 border rounded-md"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                className="w-full px-4 py-2 border rounded-md mt-3"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button className="w-full bg-blue-600 text-white py-2 rounded-md mt-3">
+                {isSignUp ? "Sign Up with Email" : "Login with Email"}
+              </button>
+            </form>
             <p className="text-center text-sm mt-4">
               {isSignUp ? "Already have an account?" : "Don't have an account?"}{" "}
-              <button onClick={() => setIsSignUp(!isSignUp)} className="text-blue-600 hover:underline">
+              <button
+                onClick={() => setIsSignUp(!isSignUp)}
+                className="text-blue-600 hover:underline"
+              >
                 {isSignUp ? "Sign In" : "Sign Up"}
               </button>
             </p>

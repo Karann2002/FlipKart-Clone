@@ -301,7 +301,7 @@ const DashBoard = () => {
   return (
     <div className=" bg-slate-100 gap-2 mw-9xl mx-auto top-20 justify-center items-center ">
      <div
-  className="bg-white mb-5 p-5 relative z-40"
+  className="bg-white mb-5 p-5 relative "
   style={{ overflowX: "auto", overflowY: "hidden", whiteSpace: "nowrap", WebkitOverflowScrolling: "touch" }}
 >
   <ul
@@ -320,19 +320,19 @@ const DashBoard = () => {
     </li>
 
     {/* Electronics with dropdown */}
-   <li className="flex flex-col justify-center items-center font-semibold relative group min-w-[100px] z-50">
+   <li className="flex flex-col justify-center items-center font-semibold min-w-[80px] ">
   <div className="relative">
     <img
       src="Screenshot 2025-04-17 144437.png"
       alt="Electronics"
-      className="h-12 w-12 object-contain"
+      className="h-17 w-17 object-cover"
     />
     <button className="text-sm mt-1 flex items-center hover:text-stone-900">
       Electronics <ChevronDown className="ml-1 h-4 w-4" />
     </button>
 
     {/* Dropdown */}
-    <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white shadow-lg py-2 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
+    <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white shadow-lg py-2 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 ">
       {Object.entries(menuItems).map(([category, subItems], index) => (
         <div key={index} className="relative group/item">
         <a
@@ -343,7 +343,7 @@ const DashBoard = () => {
           {category}
         </a>
         {subItems.length > 0 && (
-              <div className="absolute top-0 left-full mt-0 ml-1 w-56 bg-white shadow-lg opacity-0 group-hover/item:opacity-100 invisible group-hover/item:visible transition-all duration-200 z-50">
+              <div className="absolute top-0 left-full mt-0 ml-1 w-56 bg-white shadow-lg opacity-0 group-hover/item:opacity-100 invisible group-hover/item:visible transition-all duration-200 ">
                 {subItems.map((subItem, subIndex) => (
                   <a
                     key={subIndex}
@@ -360,19 +360,19 @@ const DashBoard = () => {
     </div>
   </div>
 </li>
-<li className="flex flex-col justify-center items-center font-semibold relative group min-w-[100px] z-50">
+<li className="flex flex-col justify-center items-center font-semibold min-w-[80px] ">
   <div className="relative">
     <img
       src="Screenshot 2025-04-17 144424.png"
       alt="Electronics"
-      className="h-12 w-12 object-cover"
+      className="h-17 w-17 object-cover"
     />
     <button className="text-sm mt-1 flex items-center hover:text-stone-900">
       Fashion <ChevronDown className="ml-1 h-4 w-4" />
     </button>
 
     {/* Dropdown */}
-    <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white shadow-lg py-2 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
+    <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white shadow-lg py-2 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 ">
       {[
         "Men's Top Wear",
 "Men's Bottom Wear",
@@ -397,12 +397,12 @@ const DashBoard = () => {
     </div>
   </div>
 </li>
-<li className="flex flex-col justify-center items-center font-semibold relative group min-w-[100px] z-50">
+<li className="flex flex-col justify-center items-center font-semibold min-w-[80px]">
   <div className="relative">
     <img
       src="Screenshot 2025-04-17 144447.png"
       alt="Electronics"
-      className="h-12 w-12 object-cover"
+     className="h-17 w-17 object-cover"
     />
     <button className="text-sm mt-1 flex items-center hover:text-stone-900">
       Home & Fruniture <ChevronDown className="ml-1 h-4 w-4" />
@@ -442,19 +442,19 @@ const DashBoard = () => {
       <img src="71050627a56b4693.webp" alt="Flight" className="h-17 w-17 object-cover" />
       <span className="text-sm mt-1">Flight Bookings</span>
     </li>
-    <li className="flex flex-col justify-center items-center font-semibold relative group min-w-[100px] z-50">
+    <li className="flex flex-col justify-center items-center font-semibold   min-w-[100px] ">
   <div className="relative">
     <img
       src="Screenshot 2025-04-17 124217.png"
       alt="Electronics"
-      className="h-12 w-12 object-cover"
+      className="h-17 w-17 object-cover"
     />
-    <button className="text-sm mt-1 flex items-center hover:text-stone-900">
+    <button className="text-sm mt-1 flex justify-center items-center hover:text-stone-900">
       Beauty, Toys & more <ChevronDown className="ml-1 h-4 w-4" />
     </button>
 
     {/* Dropdown */}
-    <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white shadow-lg py-2 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
+    <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white shadow-lg py-2 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 ">
       {[
         "Financial Planning",
         "Consulting Agency",
@@ -467,7 +467,7 @@ const DashBoard = () => {
         <a
           key={index}
           href="#"
-          className="block px-4 py-2 hover:bg-gray-100 text-sm z-50 "
+          className="block px-4 py-2 hover:bg-gray-100 text-sm  "
         >
           {item}
         </a>
@@ -475,12 +475,12 @@ const DashBoard = () => {
     </div>
   </div>
 </li>
-<li className="flex flex-col justify-center items-center font-semibold relative group min-w-[100px] z-50">
+<li className="flex flex-col justify-center items-center font-semibold min-w-[80px]">
   <div className="relative">
     <img
       src="Screenshot 2025-04-17 144516.png"
       alt="Electronics"
-      className="h-12 w-12 object-cover justify-center items-center"
+      className="h-17 w-17 object-cover"
     />
     <button className="text-sm mt-1 flex items-center hover:text-stone-900">
       Two Wheelers <ChevronDown className="ml-1 h-4 w-4" />

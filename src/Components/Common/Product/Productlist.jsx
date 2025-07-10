@@ -292,11 +292,8 @@ const Productlist = () => {
 // </div>
   <div className="bg-white shadow-lg relative mb-3 z-40 ">
       {/* Mobile Toggle */}
-      <div className="md:hidden flex justify-between items-center p-3 ">
-        <span className="font-bold text-lg">Categories</span>
-        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          <Menu />
-        </button>
+      <div className="md:hidden flex justify-between items-center">
+        
       </div>
 
       <ul className={`md:flex ${mobileMenuOpen ? 'block' : 'hidden'} md:flex-nowrap flex-wrap  justify-start md:justify-center items-start md:items-center gap-4 md:gap-6 overflow-x-auto md:overflow-visible p-2`}>
@@ -327,6 +324,7 @@ const Productlist = () => {
         <DropdownMenu label="Two Wheelers" items={twoWheelerItems} />
       </ul>
     </div>
+ 
   );
 }
 
