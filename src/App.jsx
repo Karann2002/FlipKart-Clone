@@ -31,7 +31,19 @@ import Users from "./Components/Admin/Pages/Users";
 
 function App() {
   return (
-    <> <ToastContainer position="bottom-right" autoClose={3000} />
+    <> <ToastContainer
+    autoClose={3000}
+  toastClassName="custom-toast"
+  bodyClassName="custom-toast-body"
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  position={window.innerWidth < 640 ? "top-center" : "bottom-right"}
+/>
     <BrowserRouter>
     
       <Routes>  
