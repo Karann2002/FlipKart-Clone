@@ -22,7 +22,7 @@ const SearchBar = () => {
       {/* Desktop Search Bar */}
       <div
         className={`hidden md:flex  rounded-md px-3 py-2 items-center sm:w-[200px] md:w-[400px] lg:w-[600px] ${
-          isProductsPage ? "bg-white " : " bg-blue-100  "
+          isProductsPage ? "bg-white text-black" : " bg-blue-100 text-black  "
         }`}
       >
         <form onSubmit={handleSearch} className="flex flex-1">

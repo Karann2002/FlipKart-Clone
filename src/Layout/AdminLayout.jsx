@@ -15,8 +15,10 @@ const AdminLayout = () => {
       <AdminNavbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)}/>
       <div className="flex flex-1 bg-white z-50">
       <ClientSideBar isOpen={sidebarOpen} />
-      <main className='h-200 w-full p-4 overflow-y-auto'>
-      <Outlet/></main>
+      <main className='bg-slate-100 h-200 w-full p-4 overflow-y-auto'>
+      <Outlet/>
+      
+      </main>
    
     </div>
     <Footer/>

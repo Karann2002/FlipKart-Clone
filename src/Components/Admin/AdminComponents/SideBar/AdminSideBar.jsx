@@ -5,7 +5,7 @@ const AdminSideBar = ({isOpen}) => {
    
 
   return (
-    <aside className={`bg-slate-100 text-gray-500 p-4 w-64  transition-all duration-300 
+    <aside className={`bg-white  p-4 w-64  transition-all duration-300 
     ${isOpen ? "block" : "hidden"}`}>
       <ul className="space-y-4">
         <li className="hover:text-emerald-400"><Link to="/admin/dashboard">Dashboard</Link></li>

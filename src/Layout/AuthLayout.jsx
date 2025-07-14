@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet ,Link} from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 // import { useState } from 'react'
 import Navbar from "../Components/Common/Navbar";
 import { motion } from "framer-motion";
@@ -9,17 +9,19 @@ const AuthLayout = () => {
   const [ref, isInView] = useInView({ threshold: 0.2 });
   return (
     <div className="h-full">
-      
       <div className="flex  flex-col">
         <Link to="/">
-    <h1 className="absolute text-xl top-15 z-50 p-2 font-bold"><img src="../../../public/fkheaderlogo_exploreplus-44005d.svg" alt="" /></h1></Link>
-    
+          <h1 className="absolute text-xl top-15 z-50 p-2 font-bold">
+            <img
+              src="../../../public/fkheaderlogo_exploreplus-44005d.svg"
+              alt=""
+            />
+          </h1>
+        </Link>
       </div>
       <div
         className="relative flex flex-row min-h-screen top-0  justify-center bg-cover bg-center px-4 py-12 sm:px-6 lg:px-8 "
-        // style={{ backgroundImage: "url('/path/to/your/image.jpg')" }}
       >
-        
         <video
           autoPlay
           loop

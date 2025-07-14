@@ -2,9 +2,6 @@ import React from "react";
 import { ChevronDown } from "lucide-react";
 import Banner from "../Others/Banner";
 import { useNavigate, Link } from "react-router-dom";
-// import { useEffect,useState } from "react";
-// import { collection, getDocs,query } from "firebase/firestore";
-// import { db } from "../../../firebase-config";
 
 const Electronics = [
   {
@@ -294,7 +291,6 @@ const menuItems = {
 
 
 const DashBoard = () => {
-  // const [ref, isInView] = useInView({ threshold: 0.3 });
 
   const navigate = useNavigate();
 

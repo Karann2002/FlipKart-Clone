@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../Components/Common/Navbar';
-import DashBoard from '../Components/Common/DashBoard';
 import { Outlet } from 'react-router-dom';
 import Footer from '../Components/Others/Footer';
 

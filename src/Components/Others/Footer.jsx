@@ -20,7 +20,7 @@ const Footer = () => {
         <div>
           <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li><a href="#" className="hover:text-white">Home</a></li>
+            <li><a href="#" className="hover:text-white">Dashboard</a></li>
             <li><a href="#" className="hover:text-white">Shop</a></li>
             <li><a href="#" className="hover:text-white">About Us</a></li>
             <li><a href="#" className="hover:text-white">Contact</a></li>
@@ -50,7 +50,7 @@ const Footer = () => {
         
         &copy; {new Date().getFullYear()} ShopEase. All rights reserved.
        
-        <img src="./../../../public/payment-method_69e7ec.svg" alt="" /></div>
+        <img src="/payment-method_69e7ec.svg" alt="" /></div>
       
       
     </footer>

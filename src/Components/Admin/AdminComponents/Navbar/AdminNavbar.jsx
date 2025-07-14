@@ -26,7 +26,7 @@ const handleLogout = () => {
         <div className='flex items-center space-x-4'>   
         <button
         onClick={toggleSidebar}
-        className="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300"
+        className="text-2xl px-3 py-1 rounded hover:bg-gray-300"
       >
         ☰
       </button>
