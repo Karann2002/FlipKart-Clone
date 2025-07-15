@@ -1,6 +1,14 @@
 
 # 🛒 eCommerce Website (React + Firebase)
 
+## 📸 Screenshots
+
+| User Panel | Admin Panel |
+|------------|-------------|
+| ![User](./public/Screenshot%202025-07-14%20163057.png) | ![Admin](./public/Screenshot 2025-07-14 175856.png) |
+
+---
+
 An eCommerce web application built with **React + Vite**, featuring:
 
 - 🔐 Firebase Authentication (Email/Password, Google)
@@ -121,13 +129,7 @@ npm run preview
 
 ---
 
-## 📸 Screenshots
 
-| User Panel | Admin Panel |
-|------------|-------------|
-| ![User](./public/Screenshot%202025-07-14%20163056.png) | ![Admin](./public/Screenshot%202025-07-14%20163057.png) |
-
----
 
 ## 📝 License
 
