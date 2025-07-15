@@ -125,11 +125,7 @@ npm run preview
 
 | User Panel | Admin Panel |
 |------------|-------------|
-<<<<<<< HEAD
 | ![User](./public/Screenshot 2025-07-14 163057.png) | ![Admin](./public/Screenshot 2025-07-14 163056.png) |
-=======
-| ![User](./public/Screenshot-2025-07-14-163056.png) | ![Admin](./public/Screenshot-2025-07-14-163057.png) |
->>>>>>> 1551533 (update readme.md)
 
 ---
 
