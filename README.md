@@ -5,7 +5,7 @@
 
 | User Panel | Admin Panel |
 |------------|-------------|
-| ![User](./public/Screenshot%202025-07-14%20163057.png) | ![Admin](./public/Screenshot 2025-07-14 175856.png) |
+| ![User](./public/Screenshot%202025-07-14%20163057.png) | ![Admin](./public/Screenshot%202025-07-14%20175856.png) |
 
 ---
 
