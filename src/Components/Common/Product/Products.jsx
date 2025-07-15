@@ -60,13 +60,13 @@ const Products = () => {
 
 
   return (
-    <div>
+    <div className="">
       {loading ? (
         <Loading />
       ) : (
         <>
           {products.length === 0 ? (
-            <div className="p-4 text-center">
+            <div className=" p-4 text-center">
               No products found{category ? ` in category "${category}"` : ""}.
             </div>
           ) : (

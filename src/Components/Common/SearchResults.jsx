@@ -20,9 +20,11 @@ const SearchResults = () => {
           id: doc.id,
           ...doc.data(),
         }));
+        console.log(products);
+        
 
         const matched = products.filter((p) =>
-          p.title.toLowerCase().includes(query.toLowerCase())
+          p.title.toLowerCase().includes(query.toLowerCase()) || p.category_1.toLowerCase().includes(query.toLowerCase()) || p.category_2.toLowerCase().includes(query.toLowerCase()) || p.category_3 .toLowerCase().includes(query.toLowerCase())
         );
         setResults(matched);
       } catch (error) {
@@ -37,7 +39,7 @@ const SearchResults = () => {
   }, [query]);
 
   return (
-    <div className="p-4 max-w-7xl mx-auto">
+    <div className="min-h-screen p-4 max-w-7xl mx-auto">
       <h2 className="text-2xl font-bold mb-6 text-gray-800">
         Search results for: <span className="text-blue-600">"{query}"</span>
       </h2>
@@ -85,7 +87,7 @@ const SearchResults = () => {
           ))}
         </div>
       ) : (
-        <div className="text-center text-gray-600 mt-8 text-lg">
+        <div className=" flex items-center justify-center min-h-[60vh] text-gray-600 text-lg">
           No products found for <span className="font-semibold">"{query}"</span>.
         </div>
       )}
