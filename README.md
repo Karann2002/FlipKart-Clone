@@ -125,7 +125,7 @@ npm run preview
 
 | User Panel | Admin Panel |
 |------------|-------------|
-| ![User](./public/Screenshot 2025-07-14 163057.png) | ![Admin](./public/Screenshot 2025-07-14 163056.png) |
+| ![User](./public/Screenshot%202025-07-14%20163056.png) | ![Admin](./public/Screenshot%202025-07-14%20163057.png) |
 
 ---
 
