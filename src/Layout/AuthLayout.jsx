@@ -11,10 +11,11 @@ const AuthLayout = () => {
     <div className="h-full">
       <div className="flex  flex-col">
         <Link to="/">
-          <h1 className="absolute text-xl top-15 z-50 p-2 font-bold">
+          <h1 className="absolute text-xl left-20 top-15 z-50 p-2 font-bold">
             <img
-              src="../../../public/fkheaderlogo_exploreplus-44005d.svg"
+              src="/logo/ShopEasylogo.png"
               alt=""
+              className="w-25"
             />
           </h1>
         </Link>
@@ -46,7 +47,7 @@ const AuthLayout = () => {
               transition={{ duration: 1 }}
               className="text-5xl md:text-6xl font-bold"
             >
-              Welcome to FlipMart
+              Welcome to ShopEasy
             </motion.h1>
             <motion.p
               initial={{ y: 30, opacity: 0 }}

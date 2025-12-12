@@ -5,9 +5,9 @@ import Footer from '../Components/Others/Footer';
 
 const CommonLayout = () => {
   return (
-     <div className="">
+     <div className="min-h-screen flex flex-col">
       <Navbar /> {/* Renders the Navbar component */}
-      <main className="m-2 ml-4 mr-4">
+      <main className="flex-grow m-2  ml-4 mr-4">
         <Outlet /> {/* Renders nested route components */}
       </main>
       <Footer/>

@@ -53,7 +53,6 @@ function App() {
 
             <Route element={<ProtectedRoute allowedRoles={"client"} />}>
               <Route path="cart" element={<CartList />} />
-              <Route path="orders" element={<Orders />} />
 
             </Route>
 
@@ -66,6 +65,8 @@ function App() {
               element={<Navigate to="/account/personalInfo" replace />}
             />
             <Route path="personalInfo" element={<Profile />} />
+              <Route path="orders" element={<Orders />} />
+
             <Route path="wishlist" element={<WishList />} />
             <Route path="notification" element={<AllNotifications />} />
             <Route path="giftcards" element={<GiftCards />} />

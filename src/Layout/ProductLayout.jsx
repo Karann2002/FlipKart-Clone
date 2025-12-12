@@ -9,7 +9,7 @@ const ProductLayout = () => {
      <div className="">
       <Navbar />
       <Productlist/>
-      <main className="">
+      <main className="mt-10">
         <Outlet /> {/* Renders nested route components */}
       </main>
       <Footer/>

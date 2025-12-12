@@ -1,10 +1,12 @@
 /** @type {import('tailwindcss').Config} */
+
+
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       animation: {
-        "gradient-x": "gradient-x 3s ease infinite",
+        "gradient-x": "gradient-x 8s ease infinite",
       },
       keyframes: {
         "gradient-x": {

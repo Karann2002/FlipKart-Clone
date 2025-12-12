@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Brand */}
         <div>
-          <h1 className="text-2xl font-bold mb-4">ShopEase</h1>
+          <h1 className="text-2xl font-bold mb-4">ShopEasy</h1>
           <p className="text-gray-400 text-sm">Your one-stop shop for everything.</p>
           <div className="flex gap-4 mt-4">
             <FaFacebook className="hover:text-blue-500 cursor-pointer" />
@@ -41,14 +41,14 @@ const Footer = () => {
         {/* Contact Info */}
         <div>
           <h2 className="text-lg font-semibold mb-4">Contact Us</h2>
-          <p className="text-sm text-gray-400">Email: support@shopease.com</p>
+          <p className="text-sm text-gray-400">Email: support@ShopEasy.com</p>
           <p className="text-sm text-gray-400">Phone: +1 (800) 123-4567</p>
           <p className="text-sm text-gray-400">Address: 123 Commerce Ave, NY</p>
         </div>
       </div>
       <div className=" max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8  justify-between border-t border-gray-800 mt-10 pt-6 text-center text-sm text-gray-500">
         
-        &copy; {new Date().getFullYear()} ShopEase. All rights reserved.
+        &copy; {new Date().getFullYear()} ShopEasy. All rights reserved.
        
         <img src="/payment-method_69e7ec.svg" alt="" /></div>
       
